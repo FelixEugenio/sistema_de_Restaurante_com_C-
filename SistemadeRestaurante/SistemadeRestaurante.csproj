@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A695CD5-0C2C-4EEA-85FB-5430B30BC2D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SistemadeRestaurante</RootNamespace>
+    <AssemblyName>SistemadeRestaurante</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.AxShockwaveFlashObjects.13.0.4003\lib\net40\AxShockwaveFlashObjects.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\MadiaSoft\MadiaSoft\Bunifu_UI_v1.5.DLL</HintPath>
+    </Reference>
+    <Reference Include="CRVsPackageLib, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CRVsPackageLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.CrystalReports.TemplateEngine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Data.AdoDotNetInterop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Enterprise.Viewing.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ClientDoc.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.ClientDoc.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommLayer.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.CommLayer.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommonControls.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.CommonControls.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommonObjectModel.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.Controllers.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.Controllers.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CubeDefModel.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.CubeDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.DataDefModel.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.DataSetConversion.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.DataSetConversion.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ObjectFactory.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.ObjectFactory.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Prompting, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.Prompting.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.Prompting.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ReportDefModel.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.ReportDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.XmlSerialize, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.XmlSerialize.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.XmlSerialize.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportSource.13.0.4003\lib\net40\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.Shared.13.0.4003\lib\net40\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.VSDesigner, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.VSDesigner.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\CrystalDecisions.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.Windows.Forms.13.0.4003\lib\net40\CrystalDecisions.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\FlashControlV71.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\..\..\Downloads\PcWonderland.com_Guna_UI_Framework_Ultimate_2\PcWonderland.com_Guna_UI_Framework_Ultimate_2\Guna UI Framework Ultimate v2.0.0.1 Lib-Master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SAPBusinessObjects.WPF.Viewer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\SAPBusinessObjects.WPF.Viewer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.13.0.25.3158\lib\SAPBusinessObjects.WPF.ViewerShared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ShockwaveFlashObjects.13.0.4003\lib\net40\ShockwaveFlashObjects.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adicionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar.Designer.cs">
+      <DependentUpon>Adicionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastrado.Designer.cs">
+      <DependentUpon>Cadastrado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClasseMae.cs" />
+    <Compile Include="Erro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Erro.Designer.cs">
+      <DependentUpon>Erro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GarconeteSelecionado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GarconeteSelecionado.Designer.cs">
+      <DependentUpon>GarconeteSelecionado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AdicionarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\AdicionarCategoria.Designer.cs">
+      <DependentUpon>AdicionarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AdicionarFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\AdicionarFuncionarios.Designer.cs">
+      <DependentUpon>AdicionarFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AdicionarMesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\AdicionarMesa.Designer.cs">
+      <DependentUpon>AdicionarMesa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AdicionarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\AdicionarProduto.Designer.cs">
+      <DependentUpon>AdicionarProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Caixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\Caixa.Designer.cs">
+      <DependentUpon>Caixa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ListaDeContas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\ListaDeContas.Designer.cs">
+      <DependentUpon>ListaDeContas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MesaSelecionada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\MesaSelecionada.Designer.cs">
+      <DependentUpon>MesaSelecionada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PontoDeVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\PontoDeVenda.Designer.cs">
+      <DependentUpon>PontoDeVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Print.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\Print.Designer.cs">
+      <DependentUpon>Print.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UcProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Model\UcProduto.Designer.cs">
+      <DependentUpon>UcProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\ListadeContas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadeContas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sucesso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sucesso.Designer.cs">
+      <DependentUpon>Sucesso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdicionarFuncionario.cs" />
+    <Compile Include="View\Categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Categoria.Designer.cs">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cozinha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cozinha.Designer.cs">
+      <DependentUpon>Cozinha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Funcionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Funcionarios.Designer.cs">
+      <DependentUpon>Funcionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Mesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Mesas.Designer.cs">
+      <DependentUpon>Mesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Produto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Produto.Designer.cs">
+      <DependentUpon>Produto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visualizador.Designer.cs">
+      <DependentUpon>Visualizador.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Adicionar.resx">
+      <DependentUpon>Adicionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastrado.resx">
+      <DependentUpon>Cadastrado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Erro.resx">
+      <DependentUpon>Erro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GarconeteSelecionado.resx">
+      <DependentUpon>GarconeteSelecionado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\AdicionarCategoria.resx">
+      <DependentUpon>AdicionarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\AdicionarFuncionarios.resx">
+      <DependentUpon>AdicionarFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\AdicionarMesa.resx">
+      <DependentUpon>AdicionarMesa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\AdicionarProduto.resx">
+      <DependentUpon>AdicionarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Caixa.resx">
+      <DependentUpon>Caixa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\ListaDeContas.resx">
+      <DependentUpon>ListaDeContas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\MesaSelecionada.resx">
+      <DependentUpon>MesaSelecionada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\PontoDeVenda.resx">
+      <DependentUpon>PontoDeVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Print.resx">
+      <DependentUpon>Print.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\UcProduto.resx">
+      <DependentUpon>UcProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Relatorios\ListadeContas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadeContas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sucesso.resx">
+      <DependentUpon>Sucesso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Categoria.resx">
+      <DependentUpon>Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cozinha.resx">
+      <DependentUpon>Cozinha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Funcionarios.resx">
+      <DependentUpon>Funcionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Mesas.resx">
+      <DependentUpon>Mesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Produto.resx">
+      <DependentUpon>Produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visualizador.resx">
+      <DependentUpon>Visualizador.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chapeu-de-chef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao-home %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opcoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lista-de-controle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\produtos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cartao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mesa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mesa %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionarios %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagamento-em-dinheiro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chefe-de-cozinha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chefe-de-cozinha1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\definicoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\definicoes %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar-botao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar-produto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\procurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lata-de-lixo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar-produto1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entregador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrega-rapida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saco-de-papel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prato1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\etiqueta-de-preco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lista-de-controle %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chapeu-de-chef1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cruz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fechar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao-fechar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desligar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ligar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garconete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sino-de-notificacao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrinho-de-compras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\impressora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lancamento-do-produto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limpando-produtos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imprimir.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
